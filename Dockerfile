@@ -2,7 +2,7 @@ FROM php:7.4.9-apache-buster
 MAINTAINER Shimkj <kyungju.shim@gmail.com>
 
 RUN a2dissite 000-default.conf && a2enmod rewrite
-COPY ../../../PhpstormProjects/order-project/container-conf /etc/apache2/sites-enabled/000-default.conf
+COPY container-conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN apt-get update \
   && apt-get install -y libzip-dev zlib1g-dev libpq-dev default-mysql-client unzip \
